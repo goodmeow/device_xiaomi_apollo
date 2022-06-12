@@ -168,11 +168,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpmhalservice.enable=1
 
 # Doze
-PRODUCT_PACKAGES += \
-    ParanoidDoze
+#PRODUCT_PACKAGES += \
+#    ParanoidDoze
 
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.sensor.pickup=xiaomi.sensor.pickup
+#PRODUCT_SYSTEM_EXT_PROPERTIES += \
+#    ro.sensor.pickup=xiaomi.sensor.pickup
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -188,12 +188,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.apollo \
-    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
-    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor \
-    vendor.xiaomi.hardware.touchfeature@1.0.vendor
 
 # FM
 PRODUCT_PACKAGES += \
@@ -261,10 +255,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.media.vpp.aie.ltmsatgain=55 \
     vendor.media.vpp.aie.ltmsatoff=55 \
     vendor.media.vpp.debug.value.use=false
-
-# Motor
-PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.motor@1.0.vendor
 
 # Netflix
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -363,3 +353,7 @@ PRODUCT_PACKAGES += \
 # WLAN
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg_qca6390.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+# WFD
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor
