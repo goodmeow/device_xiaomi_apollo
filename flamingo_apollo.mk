@@ -23,7 +23,7 @@ $(call inherit-product, device/xiaomi/apollo/device.mk)
 $(call inherit-product, vendor/flamingo/target/product/flamingo.mk)
 
 # Flamingo OS build
-OFFICIAL_BUILD := true
+OFFICIAL_BUILD ?= false
 
 # Boot animation resolution.
 TARGET_BOOT_ANIMATION_RES := 1080
