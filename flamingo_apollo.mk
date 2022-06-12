@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from the custom device configuration
-$(call inherit-product, device/xiaomi/lmi/device.mk)
+$(call inherit-product, device/xiaomi/apollo/device.mk)
 
 # Inherit some common Flamingo OS stuff.
 $(call inherit-product, vendor/flamingo/target/product/flamingo.mk)
@@ -29,8 +29,8 @@ OFFICIAL_BUILD := true
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Override AOSP properties
-PRODUCT_NAME := flamingo_lmi
-PRODUCT_DEVICE := lmi
+PRODUCT_NAME := flamingo_apollo
+PRODUCT_DEVICE := apollo
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := F2 Pro
 PRODUCT_MANUFACTURER := Xiaomi

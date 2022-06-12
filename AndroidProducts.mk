@@ -14,10 +14,10 @@
 
 # Product Makefiles
 PRODUCT_MAKEFILES += \
-    $(LOCAL_DIR)/flamingo_lmi.mk
+    $(LOCAL_DIR)/flamingo_apollo.mk
 
 # Lunch targets
 COMMON_LUNCH_CHOICES += \
-    flamingo_lmi-eng \
-    flamingo_lmi-user \
-    flamingo_lmi-userdebug
+    flamingo_apollo-eng \
+    flamingo_apollo-user \
+    flamingo_apollo-userdebug

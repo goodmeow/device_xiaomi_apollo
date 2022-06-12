@@ -190,7 +190,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.lmi \
+    android.hardware.biometrics.fingerprint@2.3-service.apollo \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
     vendor.xiaomi.hardware.fingerprintextension@1.0.vendor \
     vendor.xiaomi.hardware.touchfeature@1.0.vendor
@@ -294,10 +294,6 @@ TARGET_BOARD_PLATFORM := kona
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := all
 
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.sensors.allow_non_default_discovery=true \
@@ -343,7 +339,7 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # Vendor
-$(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
+$(call inherit-product, vendor/xiaomi/apollo/apollo-vendor.mk)
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
