@@ -9,7 +9,7 @@
 
 set -e
 
-DEVICE=lmi
+DEVICE=apollo
 VENDOR=xiaomi
 
 # Load extract utilities and do some sanity checks.

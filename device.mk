@@ -102,10 +102,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=true
 
-# Device parts
-PRODUCT_PACKAGES += \
-    DeviceParts
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
@@ -160,19 +156,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.use_layer_ext=0 \
     vendor.display.use_smooth_motion=0
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpmhalservice.enable=1
 
 # Doze
-PRODUCT_PACKAGES += \
-    ParanoidDoze
+#PRODUCT_PACKAGES += \
+#    ParanoidDoze
 
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.sensor.pickup=xiaomi.sensor.pickup
+#PRODUCT_SYSTEM_EXT_PROPERTIES += \
+#    ro.sensor.pickup=xiaomi.sensor.pickup
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -188,12 +181,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.lmi \
-    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
-    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor \
-    vendor.xiaomi.hardware.touchfeature@1.0.vendor
 
 # FM
 PRODUCT_PACKAGES += \
@@ -262,10 +249,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.media.vpp.aie.ltmsatoff=55 \
     vendor.media.vpp.debug.value.use=false
 
-# Motor
-PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.motor@1.0.vendor
-
 # Netflix
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.netflix.bsp_rev=Q8250-19134-1
@@ -293,10 +276,6 @@ TARGET_BOARD_PLATFORM := kona
 
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := all
-
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -343,7 +322,7 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # Vendor
-$(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
+$(call inherit-product, vendor/xiaomi/apollo/apollo-vendor.mk)
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
@@ -367,3 +346,7 @@ PRODUCT_PACKAGES += \
 # WLAN
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg_qca6390.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+# WFD
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor
