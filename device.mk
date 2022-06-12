@@ -156,9 +156,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.use_layer_ext=0 \
     vendor.display.use_smooth_motion=0
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpmhalservice.enable=1
